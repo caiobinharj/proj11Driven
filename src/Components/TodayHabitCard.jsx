@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { IoCheckmarkSharp } from 'react-icons/io5';
 
 const TodayHabitCardContainer = styled.div`
     width: 100%;
@@ -25,14 +26,15 @@ const HabitName = styled.h3`
 const SequenceText = styled.p`
     font-size: 13px;
     line-height: 16px;
-    color: #666666; 
+    color: #666666;
 `;
 
-const StyledCheckmarkIcon = styled.span.attrs({
-    as: 'ion-icon'
-})`
+const StyledCheckmarkIcon = styled.div`
     font-size: 35px;
     color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
 const CheckButton = styled.button`
@@ -45,7 +47,6 @@ const CheckButton = styled.button`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-
 `;
 
 function TodayHabitCard({ habit, onToggleCheck }) {
@@ -66,7 +67,9 @@ function TodayHabitCard({ habit, onToggleCheck }) {
                 </SequenceText>
             </HabitInfo>
             <CheckButton $done={habit.done} onClick={() => onToggleCheck(habit.id, habit.done)}>
-                <StyledCheckmarkIcon name="checkmark-sharp"></StyledCheckmarkIcon>
+                <StyledCheckmarkIcon>
+                    <IoCheckmarkSharp />
+                </StyledCheckmarkIcon>
             </CheckButton>
         </TodayHabitCardContainer>
     );

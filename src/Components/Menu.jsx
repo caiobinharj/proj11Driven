@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link, useLocation } from 'react-router-dom';
+import { MdCalendarMonth, MdEventAvailable } from 'react-icons/md';
 
 const FooterMenu = styled.footer`
     position: fixed;
@@ -14,9 +15,12 @@ const FooterMenu = styled.footer`
     z-index: 1000;
 `;
 
-const StyledMaterialIcon = styled.i`
+const StyledIcon = styled.div`
     font-size: 24px;
-    color: inherit; 
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
 const NavMenuItem = styled(Link)`
@@ -31,13 +35,12 @@ const NavMenuItem = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px; 
+    gap: 8px;
 
     background-color: ${props => props.$isactive ? '#52B6FF' : 'transparent'};
     color: ${props => props.$isactive ? '#FFFFFF' : '#52B6FF'};
 
     transition: background-color 0.2s, color 0.2s;
-
 `;
 
 function Menu() {
@@ -49,12 +52,16 @@ function Menu() {
     return (
         <FooterMenu>
             <NavMenuItem to="/habitos" $isactive={isHabitosActive}>
-                <StyledMaterialIcon className="material-icons">calendar_month</StyledMaterialIcon>
+                <StyledIcon>
+                    <MdCalendarMonth />
+                </StyledIcon>
                 Hábitos
             </NavMenuItem>
 
             <NavMenuItem to="/hoje" $isactive={isHojeActive}>
-                <StyledMaterialIcon className="material-icons">event_available</StyledMaterialIcon>
+                <StyledIcon>
+                    <MdEventAvailable />
+                </StyledIcon>
                 Hoje
             </NavMenuItem>
         </FooterMenu>

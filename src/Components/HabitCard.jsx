@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { IoTrashOutline } from 'react-icons/io5';
 
 const HabitCardContainer = styled.div`
     width: 100%;
@@ -37,11 +38,12 @@ const DayButtonDisplay = styled.div`
     justify-content: center;
 `;
 
-const StyledTrashIcon = styled.span.attrs({
-    as: 'ion-icon'
-})`
-    font-size: 20px; 
-    color: #666666; 
+const StyledTrashIcon = styled.div`
+    font-size: 20px;
+    color: #666666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
 const DeleteIconWrapper = styled.div`
@@ -49,10 +51,9 @@ const DeleteIconWrapper = styled.div`
     top: 10px;
     right: 10px;
     cursor: pointer;
-    display: flex; 
+    display: flex;
     align-items: center;
     justify-content: center;
-
 `;
 
 function HabitCard({ habit, onDelete }) {
@@ -72,7 +73,9 @@ function HabitCard({ habit, onDelete }) {
                 ))}
             </DayButtonsDisplay>
             <DeleteIconWrapper onClick={() => onDelete(habit.id)}>
-                <StyledTrashIcon name="trash-outline"></StyledTrashIcon>
+                <StyledTrashIcon>
+                    <IoTrashOutline />
+                </StyledTrashIcon>
             </DeleteIconWrapper>
         </HabitCardContainer>
     );
