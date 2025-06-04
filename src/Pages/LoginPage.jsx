@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ThreeDots } from 'react-loader-spinner';
 import styled from 'styled-components';
-import { AuthContext } from '../contexts/AuthContext';
+import { AuthContext } from '../Contexts/AuthContext';
 import logo from './Logo.png';
 
 const AuthContainer = styled.div`

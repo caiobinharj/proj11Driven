@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext, useCallback } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
-import AuthenticatedLayout from '../components/AuthenticatedLayout';
-import CreateHabitForm from '../components/CreateHabitForm';
-import HabitCard from '../components/HabitCard';
-import { AuthContext } from '../contexts/AuthContext';
+import AuthenticatedLayout from '../Components/AuthenticatedLayout';
+import CreateHabitForm from '../Components/CreateHabitForm';
+import HabitCard from '../Components/HabitCard';
+import { AuthContext } from '../Contexts/AuthContext';
 
 const HabitsPageContainer = styled.div`
 `;

@@ -3,10 +3,10 @@ import axios from 'axios';
 import dayjs from 'dayjs';
 import 'dayjs/locale/pt-br';
 import styled from 'styled-components';
-import AuthenticatedLayout from '../components/AuthenticatedLayout';
-import TodayHabitCard from '../components/TodayHabitCard';
-import { AuthContext } from '../contexts/AuthContext';
-import { ProgressContext } from '../contexts/ProgressContext';
+import AuthenticatedLayout from '../Components/AuthenticatedLayout';
+import TodayHabitCard from '../Components/TodayHabitCard';
+import { AuthContext } from '../Contexts/AuthContext';
+import { ProgressContext } from '../Contexts/ProgressContext';
 
 dayjs.locale('pt-br');
 
