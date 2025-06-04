@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import TopBar from './TopBar';
 import Menu from './Menu';
-import { AuthContext } from '../contexts/AuthContext';
+import { AuthContext } from '../Contexts/AuthContext';
 
 const PageContainer = styled.div`
     display: flex;

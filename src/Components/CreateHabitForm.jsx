@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { ThreeDots } from 'react-loader-spinner';
 import styled from 'styled-components';
-import { AuthContext } from '../contexts/AuthContext';
+import { AuthContext } from '../Contexts/AuthContext';
 
 const CreateHabitFormContainer = styled.div`
     width: 100%;

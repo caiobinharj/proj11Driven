@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AuthContext } from './contexts/AuthContext';
-import { ProgressContext } from './contexts/ProgressContext';
+import { AuthContext } from './Contexts/AuthContext';
+import { ProgressContext } from './Contexts/ProgressContext';
 
-import LoginPage from './pages/LoginPage';
-import SignupPage from './pages/SignupPage';
-import HabitsPage from './pages/HabitsPage';
-import TodayPage from './pages/TodayPage';
+import LoginPage from './Pages/LoginPage';
+import SignupPage from './Pages/SignupPage';
+import HabitsPage from './Pages/HabitsPage';
+import TodayPage from './Pages/TodayPage';
 
 function App() {
     const [user, setUser] = useState(() => {
