@@ -120,7 +120,7 @@ function CreateHabitForm({ onCancel, onSaveSuccess, initialName = '', initialDay
         setLoading(true);
         try {
             await axios.post(
-                'https://mock-api.directv.com.br/api/v2/trackit/habits',
+                'https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits',
                 { name, days },
                 { headers: { Authorization: `Bearer ${user.token}` } }
             );
