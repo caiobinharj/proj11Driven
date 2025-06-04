@@ -1,10 +1,10 @@
 // @ts-check
-/* eslint-disable import/no-unused-modules */
 import js from '@eslint/js';
 import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import pluginReact from 'eslint-plugin-react';
+import pluginImport from 'eslint-plugin-import'; 
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
 const config = [
@@ -26,6 +26,7 @@ const config = [
       react: pluginReact,
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      import: pluginImport, // This line is crucial
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -37,6 +38,8 @@ const config = [
         'warn',
         { allowConstantExport: true },
       ],
+      // If you want to enable import/no-unused-modules, uncomment the line below:
+      // 'import/no-unused-modules': ['warn', { ignoreExports: ['index.js'] }],
     },
     settings: {
       react: {
@@ -45,8 +48,14 @@ const config = [
       html: {
         customElements: ['ion-icon'],
       },
+      // If you plan to use more features from eslint-plugin-import, you might need to configure its resolver:
+      // 'import/resolver': {
+      //   node: {
+      //     extensions: ['.js', '.jsx']
+      //   }
+      // }
     },
   },
 ];
 
-config;
+config; // Added export default to make it a valid flat config file

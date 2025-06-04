@@ -114,14 +114,13 @@ function CreateHabitForm({ onCancel, onSaveSuccess, initialName = '', initialDay
 
     const handleSave = async () => {
         if (name.trim() === '' || days.length === 0) {
-            alert('Por favor, preencha o nome do hábito e selecione pelo menos um dia.');
             return;
         }
 
         setLoading(true);
         try {
             await axios.post(
-                'https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits',
+                'https://mock-api.directv.com.br/api/v2/trackit/habits',
                 { name, days },
                 { headers: { Authorization: `Bearer ${user.token}` } }
             );
@@ -129,7 +128,7 @@ function CreateHabitForm({ onCancel, onSaveSuccess, initialName = '', initialDay
             setDays([]);
             onSaveSuccess();
         } catch (error) {
-            alert('Erro ao salvar hábito: ' + error.response.data.message);
+            alert(error.response.data.message);
         } finally {
             setLoading(false);
         }
